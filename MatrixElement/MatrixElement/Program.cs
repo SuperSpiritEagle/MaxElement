@@ -10,6 +10,8 @@ namespace MatrixElement
             int[,] matrix = new int[row, col];
             int min = 1;
             int max = 1000;
+            int maxElement = 0;
+            int zero = 0;
 
             Random random = new Random();
 
@@ -25,14 +27,14 @@ namespace MatrixElement
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    if (matrix[i, j] > min)
+                    if (matrix[i, j] > maxElement)
                     {
-                        min = matrix[i, j];
+                        maxElement = matrix[i, j];
                     }
                 }
             }
 
-            Console.WriteLine($"Max element = {min} \n");
+            Console.WriteLine($"Max element = {maxElement} \n");
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -40,7 +42,6 @@ namespace MatrixElement
                 {
                     Console.Write(matrix[i, j] + "\t");
                 }
-
                 Console.WriteLine("\n");
             }
 
@@ -48,9 +49,9 @@ namespace MatrixElement
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    if (matrix[i, j] == min)
+                    if (matrix[i, j] == maxElement)
                     {
-                        matrix[i, j] = 0;
+                        matrix[i, j] = zero;
                     }
                 }
             }
@@ -63,7 +64,6 @@ namespace MatrixElement
                 {
                     Console.Write(matrix[i, j] + "\t");
                 }
-
                 Console.WriteLine("\n");
             }
         }
