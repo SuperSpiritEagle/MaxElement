@@ -5,9 +5,9 @@ namespace MatrixElement
     {
         static void Main(string[] args)
         {
-            int row = 10;
-            int column = 10;
-            int[,] matrixNumbers = new int[row, column];
+            int matrixRow = 10;
+            int matrixColumn = 10;
+            int[,] matrixNumbers = new int[matrixRow, matrixColumn];
             int minNumber = -1000;
             int maxNumber = 0;
             int maxElement = int.MinValue;
@@ -42,6 +42,7 @@ namespace MatrixElement
                 {
                     Console.Write(matrixNumbers[i, j] + "\t");
                 }
+
                 Console.WriteLine("\n");
             }
 
@@ -64,6 +65,7 @@ namespace MatrixElement
                 {
                     Console.Write(matrixNumbers[i, j] + "\t");
                 }
+
                 Console.WriteLine("\n");
             }
         }
